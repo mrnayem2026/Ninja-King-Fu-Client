@@ -66,7 +66,7 @@ const Navbar = () => {
                                 to='/login'
                                 className={({ isActive }) => (isActive ? 'active' : 'default')}
                             >
-                                Login
+                               <button className="btn btn-outline btn-primary text-3xl font-mono px-10">Login</button>
                             </NavLink>
                         </li>
                     </ul>
