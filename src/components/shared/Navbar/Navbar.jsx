@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Tooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css'
 import logo from '../../../assets/icons/logo.png'
+import useAuth from '../../../customeHocks/useAuth';
 
 
 
@@ -12,11 +13,19 @@ import logo from '../../../assets/icons/logo.png'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const { user, loading, logOut } = useAuth();
+
+    console.log({user});
     const handleLogOut = () => {
         logOut()
             .then(() => { })
             .catch(error => console.error(error))
     }
+
+    if (loading) {
+        return <div className='flex justify-center  mt-60'>Loding.........</div>
+    }
+
 
     return (
         <div className='top-0'>
@@ -54,20 +63,27 @@ const Navbar = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink
-                                to='/dashboards'
-                                className={({ isActive }) => (isActive ? 'active' : 'default')}
-                            >
-                                Dashboard
-                            </NavLink>
+                          {
+                            user &&   <NavLink
+                            to='/dashboards'
+                            className={({ isActive }) => (isActive ? 'active' : 'default')}
+                        >
+                            Dashboard
+                        </NavLink>
+                          }
                         </li>
                         <li>
-                            <NavLink
-                                to='/login'
-                                className={({ isActive }) => (isActive ? 'active' : 'default')}
-                            >
-                               <button className="btn btn-outline btn-primary text-3xl font-mono px-10">Login</button>
-                            </NavLink>
+                            {
+                                user ? <div className='flex gap-6'>
+                                    <NavLink onClick={handleLogOut} className="btn btn-outline btn-primary text-3xl font-BebasNeue px-10">Loguot</NavLink>
+                                    <img src={user?.photoURL} alt="" className='h-14 rounded-full cursor-pointer' data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName} />
+                                    <Tooltip id="my-tooltip" />
+                                </div> : <NavLink
+                                    to='/login'>
+                                    <button className="btn btn-outline btn-primary text-3xl font-BebasNeue px-10">Login</button>
+                                </NavLink>
+                            }
+
                         </li>
                     </ul>
                     {/* Nav Items Section for lerge device End*/}

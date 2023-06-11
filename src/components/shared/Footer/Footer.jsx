@@ -11,6 +11,7 @@ const Footer = () => {
                     <p className="text-xl font-bold"> &copy;opyright 2023</p>
                 </div>
                 <div>
+                    {/* * TODO : This Services section will be change  */}
                     <span className="footer-title">Services</span>
                     <a className="link link-hover">Marvel Toys</a>
                     <a className="link link-hover">Avengers Toys</a>
