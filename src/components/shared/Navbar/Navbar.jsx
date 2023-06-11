@@ -28,8 +28,8 @@ const Navbar = () => {
 
 
     return (
-        <div className='top-0'>
-            <nav className='relative container  mx-auto flex justify-between  my-7 '>
+        <div className='sticky z-10 top-0 bg-base-100'>
+            <nav className='relative container  mx-auto flex justify-between  py-4 '>
                 <Link to='/'>
                     {/* <h1 className='font-BebasNeue text-5xl'>Action World</h1> */}
                     <img src={logo} alt="" width='75px' height='75px' />
@@ -37,7 +37,7 @@ const Navbar = () => {
 
                 <div>
                     {/* Nav Items Section for lerge device start*/}
-                    <ul className='text-xl font-medium  items-center hidden space-x-8 lg:flex'>
+                    <ul className='text-xl mt-4 font-medium items-center hidden space-x-8 lg:flex'>
                         <li>
                             <NavLink
                                 to='/'
