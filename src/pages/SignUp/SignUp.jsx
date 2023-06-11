@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { updateProfile } from "firebase/auth";
 import useAuth from "../../customeHocks/useAuth";
 import registerImg from '../../assets/icons/singUp.png';
 import github from '../../assets/icons/github.png';
@@ -26,11 +25,10 @@ const Signup = () => {
     const onSubmit = data => {
         console.log(data)
         if (data.password == data.confirmPassword) {
-            console.log("Success");
             createUser(data.email, data.password)
                 .then(result => {
                     const loggedUser = result.user;
-                    console.log(loggedUser);
+                    // console.log(loggedUser);
                     updateUserProfile(data.name, data.photoURL)
                         .then(()=> {
                             setFrebaseError("")
