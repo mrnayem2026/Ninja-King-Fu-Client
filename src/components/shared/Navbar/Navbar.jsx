@@ -28,7 +28,7 @@ const Navbar = () => {
 
 
     return (
-        <div className='sticky z-10 top-0 bg-base-100'>
+        <div className='sticky z-10 top-0 bg-base-100 '>
             <nav className='relative container  mx-auto flex justify-between  py-4 '>
                 <Link to='/'>
                     {/* <h1 className='font-BebasNeue text-5xl'>Action World</h1> */}

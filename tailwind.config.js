@@ -10,6 +10,7 @@ export default {
       fontFamily: {
         Montserrat: ['Montserrat', 'sans-serif'],
         Kanit: ['Kanit', 'sans-serif'],
+        HindVadodara: ['Hind Vadodara', 'sans-serif'],
       },
     },
   },
