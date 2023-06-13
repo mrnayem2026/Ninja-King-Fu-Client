@@ -1,11 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../../customeHocks/useAuth';
 
 const AddClass = () => {
 
 
     const { register, handleSubmit, reset } = useForm();
-
+    const {user} = useAuth();
+console.log(user?.displayName);
     const onSubmit = data => {
         console.log(data);
 
@@ -21,7 +23,7 @@ const AddClass = () => {
                         <label className="label">
                             <span className="label-text font-semibold">Instructor name*</span>
                         </label>
-                        <input type="text" placeholder="Instructor name"
+                        <input type="text" placeholder="Instructor name" defaultValue={user?.displayName} readOnly
                             {...register("name", { required: true, maxLength: 120 })}
                             className="input input-bordered w-full text-white" />
                     </div>
@@ -29,7 +31,7 @@ const AddClass = () => {
                         <label className="label">
                             <span className="label-text font-semibold">Instructor email*</span>
                         </label>
-                        <input type="text" placeholder="Instructor email"
+                        <input type="text" defaultValue={user?.email} readOnly placeholder="Instructor email"
                             {...register("email", { required: true, maxLength: 120 })}
                             className="input input-bordered w-full text-white" />
                     </div>
