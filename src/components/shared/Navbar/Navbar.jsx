@@ -16,8 +16,8 @@ const Navbar = () => {
     const { user, loading, logOut } = useAuth();
 
      // ! TODO : Admin and Instructor dynamic korte hobe  
-    const isAdmin = true;
-    const instructors = false;
+    const isAdmin = false;
+    const instructors = true;
 
     console.log({ user });
     const handleLogOut = () => {
@@ -36,7 +36,7 @@ const Navbar = () => {
         isAdmin
             ? '/dashboard/manage_users'
             : instructors
-                ? '/dashboard/add_classs'
+                ? '/dashboard/add_class'
                 : '/dashboard/my_selected_classes';
 
     return (
@@ -68,7 +68,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <NavLink
-                                to='/classes'
+                                to='/all_classes'
                                 className={({ isActive }) => (isActive ? 'active' : 'default')}
                             >
                                 Classes
