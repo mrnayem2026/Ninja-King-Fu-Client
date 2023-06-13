@@ -5,7 +5,7 @@ import { Tooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css'
 import logo from '../../../assets/icons/logo.png'
 import useAuth from '../../../customeHocks/useAuth';
-
+import { HashLoader } from 'react-spinners';
 
 
 
@@ -15,6 +15,7 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const { user, loading, logOut } = useAuth();
 
+     // ! TODO : Admin and Instructor dynamic korte hobe  
     const isAdmin = true;
     const instructors = false;
 
@@ -26,7 +27,9 @@ const Navbar = () => {
     }
 
     if (loading) {
-        return <div className='flex justify-center  mt-60'>Loding.........</div>
+        return <div className='flex justify-center items-center h-screen'>
+            <HashLoader color="#A6ADBA"  />
+        </div>
     }
 
     const dashboardPath =

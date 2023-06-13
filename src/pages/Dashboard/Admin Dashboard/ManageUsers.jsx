@@ -2,6 +2,8 @@ import React from 'react';
 import useAxiosSecure from '../../../customeHocks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import { HashLoader } from 'react-spinners';
+import Swal from 'sweetalert2';
+import { useState } from 'react';
 
 const ManageUsers = () => {
     const [axiosSecure] = useAxiosSecure();
@@ -10,11 +12,41 @@ const ManageUsers = () => {
         return res.data;
     })
 
+    const [disabledButtons, setDisabledButtons] = useState([]);
+
     if (isLoading) {
         return <div className='flex justify-center items-center h-screen'>
             <HashLoader color="#A6ADBA"  />
         </div>
       }
+
+      const handleMakeAdmin = (user,index) =>{
+      
+        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+            method: 'PATCH'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+          
+            if(data.modifiedCount){
+                refetch();
+                
+                const updatedDisabledButtons = disabledButtons.slice();
+                updatedDisabledButtons[index] = true;
+        
+                setDisabledButtons(updatedDisabledButtons);
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `${user.name} is an Admin Now!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+        })
+    }
+
 
 
     return (
@@ -31,11 +63,11 @@ const ManageUsers = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Make Instructor</th>
-                            <th>Make Admin</th>
+                            <th className='text-xl font-HindVadodara font-bold text-black'>#</th>
+                            <th className='text-xl font-HindVadodara font-bold text-black'>Name</th>
+                            <th className='text-xl font-HindVadodara font-bold text-black'>Email</th>
+                            <th className='text-xl font-HindVadodara font-bold text-black'>Make Instructor</th>
+                            <th className='text-xl font-HindVadodara font-bold text-black'>Make Admin</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,8 +79,8 @@ const ManageUsers = () => {
                                     <th>{index+1}</th>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
-                                    <td>Blue</td>
-                                    <td>Blue</td>
+                                    <td><button  className="btn btn-outline text-lg font-Montserrat font-extrabold">Instructor</button></td>
+                                    <td><button onClick={() => handleMakeAdmin(user,index)}     disabled={disabledButtons[index]}  className="btn btn-outline text-lg font-Montserrat font-extrabold">admin</button></td>
                                 </tr>
                             )
 
