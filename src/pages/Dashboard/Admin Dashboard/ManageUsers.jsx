@@ -1,6 +1,7 @@
 import React from 'react';
 import useAxiosSecure from '../../../customeHocks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
+import { HashLoader } from 'react-spinners';
 
 const ManageUsers = () => {
     const [axiosSecure] = useAxiosSecure();
@@ -10,7 +11,9 @@ const ManageUsers = () => {
     })
 
     if (isLoading) {
-        return <span>Loading...</span>
+        return <div className='flex justify-center items-center h-screen'>
+            <HashLoader color="#A6ADBA"  />
+        </div>
       }
 
 
