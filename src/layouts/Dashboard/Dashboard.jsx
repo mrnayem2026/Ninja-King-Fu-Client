@@ -32,7 +32,7 @@ const Dashboard = () => {
                         ) : instructors ? (
                             <>
                                 <li><NavLink to="/dashboard/add_class"><BsBuildingAdd className='w-8 h-8'></BsBuildingAdd>Add Class </NavLink></li>
-                                <li><NavLink to="/dashboard/reservations"><FaCalendarAlt className='w-8 h-8'></FaCalendarAlt> My Classes </NavLink></li>
+                                <li><NavLink to="/dashboard/my_classes"><FaCalendarAlt className='w-8 h-8'></FaCalendarAlt> My Classes </NavLink></li>
                             </>
                         ) : (
                             <>
