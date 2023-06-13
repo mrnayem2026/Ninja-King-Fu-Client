@@ -12,3 +12,10 @@
   .default{
     @apply font-medium tracking-wide text-sky-200 transition-colors duration-200 hover:text-sky-400
   }
+
+  .drawer-side a.active {
+    color: white;
+  }
+  .drawer-side a {
+    background-color: transparent;
+  }

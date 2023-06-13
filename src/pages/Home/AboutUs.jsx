@@ -1,6 +1,4 @@
 import aboutUsImg from '../../assets/img/about.png'
-import aboutUsImg1 from '../../assets/img/about1.jpg'
-import aboutUsImg2 from '../../assets/img/about2.jpg'
 const AboutUs = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
