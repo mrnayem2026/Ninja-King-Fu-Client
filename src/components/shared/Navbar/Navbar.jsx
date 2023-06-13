@@ -15,7 +15,10 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const { user, loading, logOut } = useAuth();
 
-    console.log({user});
+    const isAdmin = true;
+    const instructors = false;
+
+    console.log({ user });
     const handleLogOut = () => {
         logOut()
             .then(() => { })
@@ -26,6 +29,12 @@ const Navbar = () => {
         return <div className='flex justify-center  mt-60'>Loding.........</div>
     }
 
+    const dashboardPath =
+        isAdmin
+            ? '/dashboard/manage_users'
+            : instructors
+                ? '/dashboard/add_classs'
+                : '/dashboard/my_selected_classes';
 
     return (
         <div className='sticky z-10 top-0 bg-base-100 '>
@@ -63,14 +72,14 @@ const Navbar = () => {
                             </NavLink>
                         </li>
                         <li>
-                          {
-                            user &&   <NavLink
-                            to='/dashboard'
-                            className={({ isActive }) => (isActive ? 'active' : 'default')}
-                        >
-                            Dashboard
-                        </NavLink>
-                          }
+                            {
+                                user && <NavLink
+                                    to={dashboardPath}
+                                    className={({ isActive }) => (isActive ? 'active' : 'default')}
+                                >
+                                    Dashboard
+                                </NavLink>
+                            }
                         </li>
                         <li>
                             {

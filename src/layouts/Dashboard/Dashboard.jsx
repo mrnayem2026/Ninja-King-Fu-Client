@@ -15,7 +15,7 @@ const Dashboard = () => {
         <div className="drawer lg:drawer-open bg-[#FFFFFF]">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col items-center justify-center">
-                <Outlet></Outlet>sdfsdfsdfd
+                <Outlet></Outlet>
                 <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
             </div>
@@ -25,8 +25,8 @@ const Dashboard = () => {
                     {
                         isAdmin ? (
                             <>
-                                <li><NavLink to="/dashboard/reservations"  > <BsMortarboardFill className='w-8 h-8'></BsMortarboardFill>Manage Users</NavLink></li>
-                                <li><NavLink to="/dashboard/home" ><HiUsers className='w-8 h-8'></HiUsers> Manage Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/manage_users"  > <BsMortarboardFill className='w-8 h-8'></BsMortarboardFill>Manage Users</NavLink></li>
+                                <li><NavLink to="/dashboard/manage_classes" ><HiUsers className='w-8 h-8'></HiUsers> Manage Classes</NavLink></li>
                             </>
                         ) : instructors ? (
                             <>
