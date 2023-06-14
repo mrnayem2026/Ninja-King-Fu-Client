@@ -15,8 +15,8 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const { user, loading, logOut } = useAuth();
 
-     // ! TODO : Admin and Instructor dynamic korte hobe  
-    const isAdmin = true;
+     // ! TODO : Admin and Instructor dynamic korte hobe {README.md er live change korte hobe} 
+    const isAdmin = false;
     const instructors = false ;
 
     console.log({ user });

@@ -9,7 +9,7 @@ import 'react-tooltip/dist/react-tooltip.css'
 
 const Dashboard = () => {
     // ! TODO : Admin and Instructor dynamic korte hobe  
-    const isAdmin =true ;
+    const isAdmin =false ;
     const instructors =false ;
 
     return (
@@ -36,9 +36,9 @@ const Dashboard = () => {
                             </>
                         ) : (
                             <>
-                                <li><NavLink to="/dashboard/home"><FaHome></FaHome> User Home</NavLink></li>
-                                <li><NavLink to="/dashboard/reservations"><FaCalendarAlt></FaCalendarAlt> Reservations</NavLink></li>
-                                <li><NavLink to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
+                                <li><NavLink to="/dashboard/my_selected_classes"><HiUsers className='w-8 h-8'></HiUsers>Selected Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/my_enrolled_classes"><FaCalendarAlt className='w-8 h-8'></FaCalendarAlt>Enrolled Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/payment_history"><FaWallet className='w-8 h-8'></FaWallet> Payment History</NavLink></li>
                             </>
                         )
                     }
