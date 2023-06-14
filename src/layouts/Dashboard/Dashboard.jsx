@@ -9,6 +9,8 @@ import 'react-tooltip/dist/react-tooltip.css'
 import useAuth from '../../customeHocks/useAuth';
 import useAdmin from '../../customeHocks/useAdmin';
 import useInstructor from '../../customeHocks/useInstructor';
+import AdminRoute from '../../Routes/AdminRoute';
+import InstructorRoute from '../../Routes/InstructorRoute';
 
 const Dashboard = () => {
 
@@ -30,13 +32,13 @@ const Dashboard = () => {
                     {
                         isAdmin ? (
                             <>
-                                <li><NavLink to="/dashboard/manage_users"  > <BsMortarboardFill className='w-8 h-8'></BsMortarboardFill>Manage Users</NavLink></li>
-                                <li><NavLink to="/dashboard/manage_classes" ><HiUsers className='w-8 h-8'></HiUsers> Manage Classes</NavLink></li>
+                                <li> <AdminRoute><NavLink to="/dashboard/manage_users"  ><BsMortarboardFill className='w-8 h-8'></BsMortarboardFill>Manage Users</NavLink></AdminRoute> </li>
+                                <li> <AdminRoute><NavLink to="/dashboard/manage_classes" ><HiUsers className='w-8 h-8'></HiUsers> Manage Classes</NavLink></AdminRoute> </li>
                             </>
                         ) : isInstructor ? (
                             <>
-                                <li><NavLink to="/dashboard/add_class"><BsBuildingAdd className='w-8 h-8'></BsBuildingAdd>Add Class </NavLink></li>
-                                <li><NavLink to="/dashboard/my_classes"><FaCalendarAlt className='w-8 h-8'></FaCalendarAlt> My Classes </NavLink></li>
+                                <li> <InstructorRoute><NavLink to="/dashboard/add_class"><BsBuildingAdd className='w-8 h-8'></BsBuildingAdd>Add Class </NavLink></InstructorRoute> </li>
+                                <li> <InstructorRoute><NavLink to="/dashboard/my_classes"><FaCalendarAlt className='w-8 h-8'></FaCalendarAlt> My Classes </NavLink></InstructorRoute> </li>
                             </>
                         ) : (
                             <>
