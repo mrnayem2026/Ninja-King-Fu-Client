@@ -48,12 +48,19 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser);
-                navigate("/");
-            })
-            .catch(error => {
-                console.log(error)
+                const loggedInUser = result.user;
+                const saveUser = { displayName: loggedInUser.displayName, email: loggedInUser.email ,photoURL:loggedInUser.photoURL }
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        navigate(from, { replace: true });
+                    })
             })
     }
 
@@ -136,7 +143,7 @@ const Login = () => {
                     <div className='flex flex-col justify-center items-center gap-6'>
                         <div className="flex gap-5 ">
                             <button onClick={handleGoogleSignIn} className='btn btn-outline btn-primary  rounded-full h-10'><img src={google} alt="google icon" className='w-10  pr-2 text-center' /></button>
-                            <button onClick={handleGitHubSignIn} className='btn  btn-outline btn-primary rounded-full '><img src={github} alt="github icon" className='w-10 pr-2 ' /></button>
+                            {/* <button onClick={handleGitHubSignIn} className='btn  btn-outline btn-primary rounded-full '><img src={github} alt="github icon" className='w-10 pr-2 ' /></button> */}
                         </div>
                         <button className="btn btn-outline btn-primary text-3xl  font-BebasNeue px-10"><span className="text-white">Sign in</span></button>
                     </div>

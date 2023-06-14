@@ -6,11 +6,15 @@ import { HiUsers } from "react-icons/hi";
 import { NavLink, Outlet } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css'
+import useAuth from '../../customeHocks/useAuth';
 
 const Dashboard = () => {
     // ! TODO : Admin and Instructor dynamic korte hobe  
-    const isAdmin =false ;
+    const isAdmin =true ;
     const instructors =false ;
+
+    const {user}=useAuth();
+    console.log(user);
 
     return (
         <div className="drawer lg:drawer-open bg-[#FFFFFF]">
