@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useAxiosSecure from '../../../customeHocks/useAxiosSecure';
 import useAuth from '../../../customeHocks/useAuth';
 import { HashLoader } from 'react-spinners';
@@ -6,6 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const ManageClasses = () => {
 
+    const [disabledBtn, setDisabledBtn] = useState(false)
     const [axiosSecure] = useAxiosSecure();
     const { user } = useAuth();
     const { data: allClasse = [], refetch, isLoading } = useQuery(['allClasse'], async () => {
@@ -18,6 +19,34 @@ const ManageClasses = () => {
             <HashLoader color="#A6ADBA" />
         </div>
     }
+
+    const handleStatusApprove = async (id) => {
+        try {
+            setDisabledBtn(true);
+            await axiosSecure.patch(`/set_status/${id}`, { status: 'approved' });
+            refetch();
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setDisabledBtn(false);
+        }
+    };
+
+    const handleStatusDeny = async (id) => {
+        try {
+            setDisabledBtn(true);
+            await axiosSecure.patch(`/set_status/${id}`, { status: 'denied' });
+            refetch();
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setDisabledBtn(false);
+        }
+    };
+
+
+
+
     return (
         <div className=' p-10'>
             <div className='w-52 h-28 bg-[#F5F5F7] flex items-center justify-center rounded-xl gap-3 my-4'>
@@ -38,24 +67,18 @@ const ManageClasses = () => {
                                 <p><span>Total Enrolled Students : </span>0</p>
                                 <p><span>Status : </span><div className="badge badge-secondary">{priod?.status ? priod?.status : "pending"}</div></p>
 
-                                    <div className="card-actions ">
-                                        <button className="btn btn-primary w-full" onClick={() => {
-                                            setClassId(priod._id);
-                                            window.my_modal_4.showModal();
-                                        }}>Approve</button>
-                                    </div>
-                                    <div className="card-actions ">
-                                        <button className="btn btn-primary w-full" onClick={() => {
-                                            setClassId(priod._id);
-                                            window.my_modal_4.showModal();
-                                        }}>Deny</button>
-                                    </div>
-                                    <div className="card-actions ">
-                                        <button className="btn btn-primary w-full" onClick={() => {
-                                            setClassId(priod._id);
-                                            window.my_modal_4.showModal();
-                                        }}>Send Feedback</button>
-                                    </div>
+                                <div className="card-actions ">
+                                    <button className="btn btn-primary w-full" disabled={disabledBtn || priod.status === 'approved' || priod.status === 'denied'}   onClick={() => handleStatusApprove(priod._id)}>Approve</button>
+                                </div>
+                                <div className="card-actions ">
+                                    <button className="btn btn-primary w-full" disabled={disabledBtn || priod.status === 'approved' || priod.status === 'denied'}  onClick={() => handleStatusDeny(priod._id)}>Deny</button>
+                                </div>
+                                <div className="card-actions ">
+                                    <button className="btn btn-primary w-full" onClick={() => {
+                                        setClassId(priod._id);
+                                        window.my_modal_4.showModal();
+                                    }}>Send Feedback</button>
+                                </div>
                             </div>
                         </div>
                     )

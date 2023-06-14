@@ -77,9 +77,6 @@ const ManageUsers = () => {
                 <h1> <span className='text-3xl font-Montserrat font-semibold'>Total <br />Users </span> </h1>
                 <span className='text-7xl font-Montserrat font-semibold'>{users.length}</span>
             </div>
-            {
-                console.log(users)
-            }
             <div className="overflow-x-auto ">
                 <table className="table w-full">
                     {/* head */}
