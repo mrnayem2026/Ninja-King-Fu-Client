@@ -16,8 +16,8 @@ const Navbar = () => {
     const { user, loading, logOut } = useAuth();
 
      // ! TODO : Admin and Instructor dynamic korte hobe  
-    const isAdmin = false;
-    const instructors = true;
+    const isAdmin = true;
+    const instructors = false;
 
     console.log({ user });
     const handleLogOut = () => {
