@@ -56,7 +56,7 @@ The project utilizes the following technologies and packages:
 
 ## Live Site
 
-You can access the live version of the website at [Ninja Kung Fu](http://localhost:5173/).
+You can access the live version of the website at [Ninja Kung Fu](https://candid-salamander-8f1e3a.netlify.app/).
 
 ## Description
 

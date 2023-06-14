@@ -17,7 +17,7 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const { user, loading, logOut } = useAuth();
 
-     // ! TODO : {README.md er live change korte hobe} 
+     
     
     const [isAdmin,isAdminLoading] = useAdmin();
     const [isInstructor,isInstructorLoding] = useInstructor();

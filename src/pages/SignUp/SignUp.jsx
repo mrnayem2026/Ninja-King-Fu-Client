@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 
 
 const Signup = () => {
-    // ! TODO : Sign Up and Sing in kora sob user der k database a patate hove. and Google , github singin olader ooo.
+    
     const [confirmPasswordError, setConfirmPasswordError] = useState("")
     const [confirmPasswordErrorForConfirm, setConfirmPasswordErrorForConfirm] = useState("")
     const [firebaseError, setFrebaseError] = useState("")
