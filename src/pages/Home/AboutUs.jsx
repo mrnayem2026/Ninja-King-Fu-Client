@@ -1,9 +1,20 @@
 import aboutUsImg from '../../assets/img/about.png'
+import { motion } from 'framer-motion';
 const AboutUs = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row gap-20">
-                <img src={aboutUsImg} className="max-w-sm rounded-lg "/>
+                {/* <img src={aboutUsImg} className="max-w-sm rounded-lg "/> */}
+                <motion.img
+                    src={aboutUsImg}
+                    className="max-w-sm rounded-lg"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 3 }}
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    onHoverStart={e => {}}
+                    onHoverEnd={e => {}}
+                />
                 <div>
                     <h1 className='text-4xl lg:text-7xl font-Montserrat font-semibold text-[#F87272]'>About Us</h1>
                     <p className='font-Kanit font-extralight text-2xl'>Explore Ninja Kung Fu with us</p>
