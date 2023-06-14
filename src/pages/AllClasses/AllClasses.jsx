@@ -2,6 +2,8 @@ import React from 'react';
 import useAxiosSecure from '../../customeHocks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import { HashLoader } from 'react-spinners';
+import useAdmin from '../../customeHocks/useAdmin';
+import useInstructor from '../../customeHocks/useInstructor';
 
 const AllClasses = () => {
     const [axiosSecure] = useAxiosSecure();
@@ -19,10 +21,9 @@ const AllClasses = () => {
     const handleSelectedClass =()=>{
         console.log("handleSelectedClass");
     }
-
-     // ! TODO : Admin and Instructor dynamic korte hobe  
-     const isAdmin = false;
-     const instructors = false ;
+    
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
 
     return (
         <div className='container mx-auto'>
@@ -40,7 +41,7 @@ const AllClasses = () => {
                                 <p><span>Price : </span>{priod?.price}</p>
                                 <div className="card-actions ">
                                     <button className="btn btn-primary w-full"
-                                     disabled={priod?.availableSeats == 0 || (isAdmin || instructors)}
+                                     disabled={priod?.availableSeats == 0 || (isAdmin || isInstructor)}
                                     onClick={handleSelectedClass}>Select Class</button>
                                 </div>
                                

@@ -6,6 +6,8 @@ import 'react-tooltip/dist/react-tooltip.css'
 import logo from '../../../assets/icons/logo.png'
 import useAuth from '../../../customeHocks/useAuth';
 import { HashLoader } from 'react-spinners';
+import useAdmin from '../../../customeHocks/useAdmin';
+import useInstructor from '../../../customeHocks/useInstructor';
 
 
 
@@ -15,11 +17,10 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const { user, loading, logOut } = useAuth();
 
-     // ! TODO : Admin and Instructor dynamic korte hobe {README.md er live change korte hobe} 
-    const isAdmin = true;
-    const instructors = false ;
-
-    console.log({ user });
+     // ! TODO : {README.md er live change korte hobe} 
+    
+    const [isAdmin,isAdminLoading] = useAdmin();
+    const [isInstructor,isInstructorLoding] = useInstructor();
     const handleLogOut = () => {
         logOut()
             .then(() => { })
@@ -35,7 +36,7 @@ const Navbar = () => {
     const dashboardPath =
         isAdmin
             ? '/dashboard/manage_users'
-            : instructors
+            : isInstructor
                 ? '/dashboard/add_class'
                 : '/dashboard/my_selected_classes';
 

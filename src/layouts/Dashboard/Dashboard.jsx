@@ -7,14 +7,14 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css'
 import useAuth from '../../customeHocks/useAuth';
+import useAdmin from '../../customeHocks/useAdmin';
+import useInstructor from '../../customeHocks/useInstructor';
 
 const Dashboard = () => {
-    // ! TODO : Admin and Instructor dynamic korte hobe  
-    const isAdmin =true ;
-    const instructors =false ;
 
     const {user}=useAuth();
-    console.log(user);
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
 
     return (
         <div className="drawer lg:drawer-open bg-[#FFFFFF]">
@@ -33,7 +33,7 @@ const Dashboard = () => {
                                 <li><NavLink to="/dashboard/manage_users"  > <BsMortarboardFill className='w-8 h-8'></BsMortarboardFill>Manage Users</NavLink></li>
                                 <li><NavLink to="/dashboard/manage_classes" ><HiUsers className='w-8 h-8'></HiUsers> Manage Classes</NavLink></li>
                             </>
-                        ) : instructors ? (
+                        ) : isInstructor ? (
                             <>
                                 <li><NavLink to="/dashboard/add_class"><BsBuildingAdd className='w-8 h-8'></BsBuildingAdd>Add Class </NavLink></li>
                                 <li><NavLink to="/dashboard/my_classes"><FaCalendarAlt className='w-8 h-8'></FaCalendarAlt> My Classes </NavLink></li>
