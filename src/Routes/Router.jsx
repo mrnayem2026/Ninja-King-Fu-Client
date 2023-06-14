@@ -11,6 +11,7 @@ import ManageUsers from "../pages/Dashboard/Admin Dashboard/ManageUsers";
 import AllClasses from "../pages/AllClasses/AllClasses";
 import Instructors from "../pages/Instructors/Instructors";
 import MyClasses from "../pages/Dashboard/Instructor Dashboard/MyClasses";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([

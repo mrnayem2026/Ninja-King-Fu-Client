@@ -33,7 +33,7 @@ const ManageUsers = () => {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: `${user.name} is an Admin Now!`,
+                        title: `${user?.displayName} is an Admin Now!`,
                         showConfirmButton: false,
                         timer: 1500
                     });
@@ -56,7 +56,7 @@ const ManageUsers = () => {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: `${user.name} is a Instructor Now!`,
+                        title: `${user?.displayName} is a Instructor Now!`,
                         showConfirmButton: false,
                         timer: 1500
                     });
@@ -96,8 +96,8 @@ const ManageUsers = () => {
                             users.map((user, index) =>
                                 <tr key={user._id}>
                                     <th>{index + 1}</th>
-                                    <td>{user.name}</td>
-                                    <td>{user.email}</td>
+                                    <td>{user?.displayName}</td>
+                                    <td>{user?.email}</td>
                                     <td><button onClick={() => handleMakeInstructor(user, index)} disabled={instructorDisabledButtons[index]} className="btn btn-outline text-lg font-Montserrat font-extrabold">Instructor</button></td>
                                     <td><button onClick={() => handleMakeAdmin(user, index)} disabled={disabledButtons[index]} className="btn btn-outline text-lg font-Montserrat font-extrabold">admin</button></td>
                                 </tr>
