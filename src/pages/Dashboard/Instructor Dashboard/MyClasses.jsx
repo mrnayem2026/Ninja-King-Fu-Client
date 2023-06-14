@@ -12,7 +12,7 @@ const MyClasses = () => {
 
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
     const [classId, setClassId] = useState(null);
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit, reset,formState: { errors } } = useForm();
     const [axiosSecure] = useAxiosSecure();
     const { user } = useAuth();
     const { data: classes = [], refetch, isLoading } = useQuery(['classes'], async () => {
@@ -50,7 +50,7 @@ const MyClasses = () => {
                                     Swal.fire({
                                         position: 'top-end',
                                         icon: 'success',
-                                        title: 'New Class added successfully',
+                                        title: ' Class Updated successfully',
                                         showConfirmButton: false,
                                         timer: 1500
                                     })
@@ -127,6 +127,7 @@ const MyClasses = () => {
                             <input type="text" placeholder="Class name"
                                 {...register("className", { required: true, maxLength: 120 })}
                                 className="input input-bordered w-full text-white" />
+                                {errors.className && <span className="text-red-500">Class Name is required</span>}
                         </div>
                         <div className="form-control mb-4 w-full">
                             <label className="label">
@@ -135,6 +136,7 @@ const MyClasses = () => {
                             <input type="number" placeholder="Available seats"
                                 {...register("availableSeats", { required: true, maxLength: 120 })}
                                 className="input input-bordered w-full text-white" />
+                                        {errors.availableSeats && <span className="text-red-500">Available seats is required</span>}
                         </div>
                         <div className="form-control mb-4 w-full">
                             <label className="label">
@@ -143,6 +145,8 @@ const MyClasses = () => {
                             <input type="number" placeholder="Price"
                                 {...register("price", { required: true, maxLength: 120 })}
                                 className="input input-bordered w-full text-white" />
+                                
+                           {errors.price && <span className="text-red-500">Price is required</span>}
                         </div>
                     </div>
 
@@ -152,6 +156,7 @@ const MyClasses = () => {
                             <span className="label-text absolute">Choose a Image*</span>
                         </label>
                         <input type="file" {...register("image", { required: true })} className="opacity-0 absolute  file-input file-input-bordered w-full " />
+                        {errors.image && <span className="text-red-500">Image is required</span>}
                     </div>
                     <input className="btn btn-sm mt-4  w-full text-2xl font-Montserrat font-medium" type="submit" value="UpDate Class" />
 

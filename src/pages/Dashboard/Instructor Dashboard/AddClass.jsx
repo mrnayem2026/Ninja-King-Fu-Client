@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 const AddClass = () => {
 
 
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit, reset ,formState: { errors }} = useForm();
     const { user } = useAuth();
     const [axiosSecure] = useAxiosSecure();
 
@@ -59,7 +59,7 @@ const AddClass = () => {
                         <label className="label">
                             <span className="label-text font-semibold">Instructor name*</span>
                         </label>
-                        <input type="text" placeholder="Instructor name" defaultValue={user?.displayName} readOnly
+                        <input type="text" placeholder="Instructor name" defaultValue={user?.displayName ? user?.displayName : "UnKown Person"} readOnly
                             {...register("name", { required: true, maxLength: 120 })}
                             className="input input-bordered w-full text-white" />
                     </div>
@@ -67,7 +67,7 @@ const AddClass = () => {
                         <label className="label">
                             <span className="label-text font-semibold">Instructor email*</span>
                         </label>
-                        <input type="email" defaultValue={user?.email} readOnly placeholder="Instructor email"
+                        <input type="email" defaultValue={user?.email ? user?.email : "xyz@gmail.com"} readOnly placeholder="Instructor email"
                             {...register("email", { required: true, maxLength: 120 })}
                             className="input input-bordered w-full text-white" />
                     </div>
@@ -81,6 +81,7 @@ const AddClass = () => {
                         <input type="text" placeholder="Class name"
                             {...register("className", { required: true, maxLength: 120 })}
                             className="input input-bordered w-full text-white" />
+                            {errors.className && <span className="text-red-500">Class Name is required</span>}
                     </div>
                     <div className="form-control mb-4 w-full">
                         <label className="label">
@@ -89,6 +90,7 @@ const AddClass = () => {
                         <input type="number" placeholder="Available seats"
                             {...register("availableSeats", { required: true, maxLength: 120 })}
                             className="input input-bordered w-full text-white" />
+                             {errors.availableSeats && <span className="text-red-500">Available seats is required</span>}
                     </div>
                     <div className="form-control mb-4 w-full">
                         <label className="label">
@@ -97,6 +99,7 @@ const AddClass = () => {
                         <input type="number" placeholder="Price"
                             {...register("price", { required: true, maxLength: 120 })}
                             className="input input-bordered w-full text-white" />
+                           {errors.price && <span className="text-red-500">Price is required</span>}
                     </div>
                 </div>
 
@@ -106,6 +109,7 @@ const AddClass = () => {
                         <span className="label-text absolute">Choose a Image*</span>
                     </label>
                     <input type="file" {...register("image", { required: true })} className="opacity-0 absolute  file-input file-input-bordered w-full " />
+                    {errors.image && <span className="text-red-500">Image is required</span>}
                 </div>
                 <input className="btn btn-sm mt-4  w-full text-2xl font-Montserrat font-medium" type="submit" value="Add a Class" />
             </form>

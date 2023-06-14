@@ -111,9 +111,9 @@ const Signup = () => {
                     <div className="form-control relative z-0  w-full mb-6 group">
                         <input
                             type="text"
-                            name="name"
+                            name="displayName"
                             id="name"
-                            {...register("name", { required: true })}
+                            {...register("displayName", { required: true })}
                             className={`block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2  appearance-none focus:outline-none focus:ring-0  peer `}
                             placeholder=" "
                         />
@@ -122,7 +122,7 @@ const Signup = () => {
                         >
                             Name
                         </label>
-                        {errors.name && <span className="text-white">Name is required</span>}
+                        {errors.displayName && <span className="text-white">Name is required</span>}
                     </div>
 
                     {/* email  */}
