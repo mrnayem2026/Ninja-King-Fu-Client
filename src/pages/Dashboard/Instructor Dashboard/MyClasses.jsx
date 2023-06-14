@@ -84,7 +84,7 @@ const MyClasses = () => {
                                 <p><span>Total Enrolled Students : </span>0</p>
                                 <p><span>Status : </span><div className="badge badge-secondary">{priod?.status ? priod?.status : "pending"}</div></p>
                                 <p>Feedback</p> <span>---------</span>
-                                <p>No Feedback</p>
+                                <p>{priod?.feedback ? priod?.feedback : "No Feedback"}</p>
                                 <div className="card-actions ">
                                     <button className="btn btn-primary w-full" onClick={() => {
                                         setClassId(priod._id);

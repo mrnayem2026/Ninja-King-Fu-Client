@@ -9,8 +9,8 @@ import 'react-tooltip/dist/react-tooltip.css'
 
 const Dashboard = () => {
     // ! TODO : Admin and Instructor dynamic korte hobe  
-    const isAdmin = true;
-    const instructors =false ;
+    const isAdmin = false;
+    const instructors =true ;
 
     return (
         <div className="drawer lg:drawer-open bg-[#FFFFFF]">
