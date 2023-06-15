@@ -11,6 +11,7 @@ import useAdmin from '../../customeHocks/useAdmin';
 import useInstructor from '../../customeHocks/useInstructor';
 import AdminRoute from '../../Routes/AdminRoute';
 import InstructorRoute from '../../Routes/InstructorRoute';
+import StudentRoute from '../../Routes/StudentRoute';
 
 const Dashboard = () => {
 
@@ -42,9 +43,9 @@ const Dashboard = () => {
                             </>
                         ) : (
                             <>
-                                <li><NavLink to="/dashboard/my_selected_classes"><HiUsers className='w-8 h-8'></HiUsers>Selected Classes</NavLink></li>
-                                <li><NavLink to="/dashboard/my_enrolled_classes"><FaCalendarAlt className='w-8 h-8'></FaCalendarAlt>Enrolled Classes</NavLink></li>
-                                <li><NavLink to="/dashboard/payment_history"><FaWallet className='w-8 h-8'></FaWallet> Payment History</NavLink></li>
+                                <li><StudentRoute><NavLink to="/dashboard/my_selected_classes"><HiUsers className='w-8 h-8'></HiUsers>Selected Classes</NavLink></StudentRoute></li>
+                                <li> <StudentRoute><NavLink to="/dashboard/my_enrolled_classes"><FaCalendarAlt className='w-8 h-8'></FaCalendarAlt>Enrolled Classes</NavLink></StudentRoute></li>
+                                <li><StudentRoute><NavLink to="/dashboard/payment_history"><FaWallet className='w-8 h-8'></FaWallet> Payment History</NavLink></StudentRoute></li>
                             </>
                         )
                     }
