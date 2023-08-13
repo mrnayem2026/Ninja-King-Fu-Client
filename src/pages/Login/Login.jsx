@@ -50,7 +50,7 @@ const Login = () => {
             .then(result => {
                 const loggedInUser = result.user;
                 const saveUser = { displayName: loggedInUser.displayName, email: loggedInUser.email ,photoURL:loggedInUser.photoURL }
-                fetch('https://ninja-kung-fu-server.vercel.app/users', {
+                fetch('http://localhost:3000/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

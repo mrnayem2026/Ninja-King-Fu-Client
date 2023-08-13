@@ -30,7 +30,7 @@ const Banner = () => {
         height: '100vh' 
     };
     return (
-        <div className='h-screen pb-10 '>
+        <div className='h-screen'>
             <Carousel>
                 {/* 1ST BANNER  */}
                 <div style={containerStyle1}>
