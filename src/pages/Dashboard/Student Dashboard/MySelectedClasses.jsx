@@ -17,7 +17,11 @@ const MySelectedClasses = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
+<<<<<<< HEAD
                 fetch(`https://ninja-kung-fu-server.vercel.app/selected_classes/${item._id}`, {
+=======
+                fetch(`http://localhost:3000/selected_classes/${item._id}`, {
+>>>>>>> 6e43a99 (Banner section upgrade all most done)
                     method: 'DELETE'
                 })
                     .then(res => res.json())
