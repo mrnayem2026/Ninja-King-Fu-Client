@@ -8,9 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Montserrat: ['Montserrat', 'sans-serif'],
-        Kanit: ['Kanit', 'sans-serif'],
-        HindVadodara: ['Hind Vadodara', 'sans-serif'],
+        Oswald: ['Oswald', 'sans-serif'],
+        Poppins: ['Poppins', 'sans-serif'],
       },
     },
   },

@@ -74,8 +74,8 @@ const ManageUsers = () => {
     return (
         <div className='text-black w-full p-10'>
             <div className='w-52 h-28 bg-[#F5F5F7] flex items-center justify-center rounded-xl gap-3'>
-                <h1> <span className='text-3xl font-Montserrat font-semibold'>Total <br />Users </span> </h1>
-                <span className='text-7xl font-Montserrat font-semibold'>{users.length}</span>
+                <h1> <span className='text-3xl font-Poppins font-semibold'>Total <br />Users </span> </h1>
+                <span className='text-7xl font-Poppins font-semibold'>{users.length}</span>
             </div>
             <div className="overflow-x-auto ">
                 <table className="table w-full">
@@ -98,8 +98,8 @@ const ManageUsers = () => {
                                     <th>{index + 1}</th>
                                     <td>{user?.displayName}</td>
                                     <td>{user?.email}</td>
-                                    <td><button onClick={() => handleMakeInstructor(user, index)} disabled={instructorDisabledButtons[index]} className="btn btn-outline text-lg font-Montserrat font-extrabold">Instructor</button></td>
-                                    <td><button onClick={() => handleMakeAdmin(user, index)} disabled={disabledButtons[index]} className="btn btn-outline text-lg font-Montserrat font-extrabold">admin</button></td>
+                                    <td><button onClick={() => handleMakeInstructor(user, index)} disabled={instructorDisabledButtons[index]} className="btn btn-outline text-lg font-Poppins font-extrabold">Instructor</button></td>
+                                    <td><button onClick={() => handleMakeAdmin(user, index)} disabled={disabledButtons[index]} className="btn btn-outline text-lg font-Poppins font-extrabold">admin</button></td>
                                 </tr>
                             )
 

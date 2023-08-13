@@ -34,51 +34,57 @@ const Banner = () => {
             <Carousel>
                 {/* 1ST BANNER  */}
                 <div style={containerStyle1}>
-                    <div className='flex flex-col lg:flex-row lg:gap-4 px-4'>
-                        <div className='lg:pt-40 lg:pl-16 pb-7'>
-                            <h1 className='font-Kanit font-semibold text-3xl pt-7 lg:text-5xl lg:pb-5 text-transparent  bg-clip-text bg-gradient-to-r from-violet-600 to-pink-600'>Discover the Art of Combat <br /> Martial Arts Summer Camp</h1>
-                            <p className='font-Montserrat font-thin text-sm py-4'>
+                    <div className='container mx-auto flex flex-col lg:flex-row lg:gap-4 px-4'>
+                        <div className='lg:pt-40  pb-7'>
+                            <h1 className='font-Oswald font-bold text-3xl pt-7 lg:text-6xl lg:pb-5 text-transparent  bg-clip-text bg-gradient-to-l from-red-200 to-red-600'>Discover the Art of Combat <br /> Martial Arts Summer Camp</h1>
+                            <p className='font-Poppins font-thin text-base py-4 text-white'>
                                 Under the guidance of experienced instructors, you'll learn the ancient techniques and principles that define martial arts. Unleash your inner strength, hone your skills, and forge lifelong friendships, all within the immersive and empowering environment of our Martial Arts Summer Camp.
+                                <br /> <br />
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, magni odio tempora qui sequi nostrum, illo reiciendis asperiores corporis neque distinctio, veniam at? Quas libero culpa odit eveniet, expedita maiores necessitatibus alias suscipit voluptates aperiam. Et, nobis? Fugit temporibus tenetur, dolore sunt fuga illo nobis soluta, voluptate, suscipit unde quas.</p>
                             </p>
                             <div className='lg:py-4 '>
-                                <button className='btn border-0 text-white mr-4 bg-gradient-to-r from-violet-600 to-indigo-600'>Start free trial</button>
-                                <button className='btn btn-outline hover:bg-gradient-to-r from-violet-600 to-indigo-600 hover:text-white'>Learn more</button>
+                                <button className='btn border-0 text-white mr-4 bg-gradient-to-l from-red-200 to-red-600'>Start free trial</button>
+                                <button className='btn btn-outline hover:bg-gradient-to-l from-red-200 to-red-600 hover:text-white transition duration-300 '>Learn more</button>
                             </div>
                         </div>
-                        <img src={banner1} alt="" width="500px" height="900px" className='border-dashed border-2 border-violet-600 p-2 rounded lg:mt-40 lg:ml-9' />
+                        <img src={banner1} alt=""  className='w-full md:w-2/3 lg:w-1/2 xl:w-2/4 border-dashed border-2 border-red-600 p-2 rounded lg:mt-40 lg:ml-9' />
                     </div>
                 </div>
                 {/* 2nd BANNER  */}
                 <div style={containerStyle2}>
-                    <div className='flex flex-col lg:flex-row lg:gap-4 px-4'>
-                        <img src={banner2} alt="" width="500px" height="900px" className='border-dashed border-2 border-violet-600 p-2 rounded lg:mt-40 lg:ml-9' />
+                    <div className='container mx-auto flex flex-col lg:flex-row lg:gap-4 px-4'>
+                        <img src={banner2} alt=""  className='w-full md:w-2/3 lg:w-1/2 xl:w-2/4 border-dashed border-2 border-red-600 p-2 rounded lg:mt-40 ' />
                         <div className='lg:pt-40 lg:pl-16 pb-7'>
-                            <h1 className='font-Kanit font-semibold text-3xl pt-7 lg:text-5xl lg:pb-5 text-transparent  bg-clip-text bg-gradient-to-r from-violet-600 to-pink-600'>Warrior Training Grounds <br /> Martial Arts Summer Camp</h1>
-                            <p className='font-Montserrat font-thin text-sm py-4'>
-                                At Warrior Training Grounds, our Martial Arts Summer Camp offers an unparalleled opportunity to train alongside dedicated instructors, push your limits, and uncover the true warrior within you. Join us for a transformative experience where discipline, perseverance, and camaraderie flourish.
+                            <h1 className='font-Oswald font-bold text-3xl pt-7 lg:text-6xl lg:pb-5 text-transparent  bg-clip-text bg-gradient-to-l from-red-200 to-red-600'>Warrior Training Grounds <br /> Martial Arts Summer Camp</h1>
+                            <p className='font-Poppins font-thin text-base py-4 text-white'>
+                                At Warrior Training Grounds, our Martial Arts Summer Camp offers an unparalleled opportunity to train alongside dedicated instructors, push your limits, and uncover the true warrior within you. Join us for a transformative experience where discipline, perseverance, and camaraderie flourish. 
+                                <br /> <br />
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, magni odio tempora qui sequi nostrum, illo reiciendis asperiores corporis neque distinctio, veniam at? Quas libero culpa odit eveniet, expedita maiores necessitatibus alias suscipit voluptates aperiam. Et, nobis? Fugit temporibus tenetur, dolore sunt fuga illo nobis soluta, voluptate, suscipit unde quas.</p>
                             </p>
                             <div className='lg:py-4 '>
-                                <button className='btn border-0 text-white mr-4 bg-gradient-to-r from-violet-600 to-indigo-600'>Start free trial</button>
-                                <button className='btn btn-outline hover:bg-gradient-to-r from-violet-600 to-indigo-600 hover:text-white'>Learn more</button>
+                                <button className='btn border-0 text-white mr-4 bg-gradient-to-l from-red-200 to-red-600'>Start free trial</button>
+                                <button className='btn btn-outline hover:bg-gradient-to-l from-red-200 to-red-600 hover:text-white'>Learn more</button>
                             </div>
                         </div>
 
                     </div>
                 </div>
                 {/* 3rd BANNER  */}
-                <div style={containerStyle3}>
-                    <div className='flex flex-col lg:flex-row lg:gap-4 px-4'>
-                        <div className='lg:pt-40 lg:pl-16 pb-7'>
-                            <h1 className='font-Kanit font-semibold text-3xl pt-7 lg:text-5xl lg:pb-5 text-transparent  bg-clip-text bg-gradient-to-r from-violet-600 to-pink-600'>The Way of the Fighter <br /> Summer Camp Martial Arts School</h1>
-                            <p className='font-Montserrat font-thin text-sm py-4'>
-                                Immerse yourself in the ancient traditions and philosophies of martial arts at The Way of the Fighter. Our Summer Camp Martial Arts School will guide you on a path of self-discovery, where resilience, respect, and discipline intertwine to shape you into a skilled fighter both inside and outside the ring. Embrace the journey and embrace your inner warrior.
+                    <div style={containerStyle1}>
+                    <div className='container mx-auto flex flex-col lg:flex-row lg:gap-4 px-4'>
+                        <div className='lg:pt-40  pb-7'>
+                            <h1 className='font-Oswald font-bold text-3xl pt-7 lg:text-6xl lg:pb-5 text-transparent  bg-clip-text bg-gradient-to-l from-red-200 to-red-600'>The Way of the Fighter <br /> Summer Camp Martial Arts School</h1>
+                            <p className='font-Poppins font-thin text-base py-4 text-white'>
+                            Immerse yourself in the ancient traditions and philosophies of martial arts at The Way of the Fighter. Our Summer Camp Martial Arts School will guide you on a path of self-discovery, where resilience, respect, and discipline intertwine to shape you into a skilled fighter both inside and outside the ring. Embrace the journey and embrace your inner warrior.
+                                <br /> <br />
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, magni odio tempora qui sequi nostrum, illo reiciendis asperiores corporis neque distinctio, veniam at? Quas libero culpa odit eveniet, expedita maiores necessitatibus alias suscipit voluptates aperiam. Et, nobis? Fugit temporibus tenetur, dolore sunt fuga illo nobis soluta, voluptate, suscipit unde quas.</p>
                             </p>
                             <div className='lg:py-4 '>
-                                <button className='btn border-0 text-white mr-4 bg-gradient-to-r from-violet-600 to-indigo-600'>Start free trial</button>
-                                <button className='btn btn-outline hover:bg-gradient-to-r from-violet-600 to-indigo-600 hover:text-white'>Learn more</button>
+                                <button className='btn border-0 text-white mr-4 bg-gradient-to-l from-red-200 to-red-600'>Start free trial</button>
+                                <button className='btn btn-outline hover:bg-gradient-to-l from-red-200 to-red-600 hover:text-white transition duration-300 '>Learn more</button>
                             </div>
                         </div>
-                        <img src={banner3} alt="" width="500px" height="900px" className='border-dashed border-2 border-violet-600 p-2 rounded lg:mt-40 lg:ml-9' />
+                        <img src={banner3} alt=""  className='w-full md:w-2/3 lg:w-1/2 xl:w-2/4 border-dashed border-2 border-red-600 p-2 rounded lg:mt-40 lg:ml-9' />
                     </div>
                 </div>
             </Carousel>

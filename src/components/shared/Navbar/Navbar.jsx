@@ -45,12 +45,12 @@ const Navbar = () => {
             <nav className='relative container  mx-auto flex justify-between  py-4 '>
                 <Link to='/'>
                     {/* <h1 className='font-BebasNeue text-5xl'>Action World</h1> */}
-                    <img src={logo} alt="" width='75px' height='75px' />
+                    <img src={logo} alt=""/>
                 </Link>
 
                 <div>
                     {/* Nav Items Section for lerge device start*/}
-                    <ul className='text-xl mt-4 font-medium items-center hidden space-x-8 lg:flex'>
+                    <ul className='text-2xl uppercase font-Oswald mt-4 font-medium items-center hidden space-x-8 lg:flex'>
                         <li>
                             <NavLink
                                 to='/'
@@ -88,12 +88,12 @@ const Navbar = () => {
                         <li>
                             {
                                 user ? <div className='flex gap-6'>
-                                    <NavLink onClick={handleLogOut} className="btn btn-outline btn-primary text-3xl font-BebasNeue px-10">Loguot</NavLink>
+                                    <NavLink onClick={handleLogOut} className="btn btn-outline hover:bg-[#e43d49] text-white text-3xl font-Oswald px-10 border-[#e43d49] hover:border-[#e43d49] hover:text-base-200 transition duration-500">Loguot</NavLink>
                                     <img src={user?.photoURL} alt="" className='h-14 rounded-full cursor-pointer' data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName} />
                                     <Tooltip id="my-tooltip" />
                                 </div> : <NavLink
                                     to='/login'>
-                                    <button className="btn btn-outline btn-primary text-3xl font-BebasNeue px-10">Login</button>
+                                    <button className="btn btn-outline hover:bg-[#e43d49] text-white text-3xl font-Oswald px-10 border-[#e43d49] hover:border-[#e43d49] transition duration-300">Login</button>
                                 </NavLink>
                             }
 

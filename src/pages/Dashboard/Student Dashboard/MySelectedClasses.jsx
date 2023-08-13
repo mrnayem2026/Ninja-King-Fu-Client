@@ -42,8 +42,8 @@ const MySelectedClasses = () => {
     return (
         <div className='text-black w-full p-10'>
             <div className='w-52 h-28 bg-[#F5F5F7] flex items-center justify-center rounded-xl gap-3'>
-                <h1> <span className='text-3xl font-Montserrat font-semibold'>Total <br />Users </span> </h1>
-                <span className='text-7xl font-Montserrat font-semibold'>{selectedClass?.length}</span>
+                <h1> <span className='text-3xl font-Poppins font-semibold'>Total <br />Users </span> </h1>
+                <span className='text-7xl font-Poppins font-semibold'>{selectedClass?.length}</span>
             </div>
             <div className="overflow-x-auto ">
                 <table className="table w-full">
@@ -70,8 +70,8 @@ const MySelectedClasses = () => {
                                     <td>{selecteClass.selectedClassId.name}</td>
                                     <td>{selecteClass.selectedClassId.price}</td>
                                     <td>{selecteClass.selectedClassId.availableSeats}</td>
-                                    <td><button onClick={() => handleDelete(selecteClass)} className="btn btn-outline text-lg font-Montserrat font-extrabold">Delete</button></td>
-                                    <td><button onClick={() => handlePay()} className="btn btn-outline text-lg font-Montserrat font-extrabold">Pay</button></td>
+                                    <td><button onClick={() => handleDelete(selecteClass)} className="btn btn-outline text-lg font-Poppins font-extrabold">Delete</button></td>
+                                    <td><button onClick={() => handlePay()} className="btn btn-outline text-lg font-Poppins font-extrabold">Pay</button></td>
                                 </tr>
                             )
 

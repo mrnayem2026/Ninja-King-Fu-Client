@@ -17,7 +17,7 @@ const PopularInstructors  = () => {
     }
     return (
         <div className='container mx-auto py-10'>
-        <h1 className='text-center font-Montserrat text-6xl py-10  font-semibold text-[#36D399]'>Popular Instructors</h1>
+        <h1 className='text-center font-Poppins text-6xl py-10  font-semibold text-[#36D399]'>Popular Instructors</h1>
 
         <div className='grid  lg:grid-cols-3 gap-10'>
             {

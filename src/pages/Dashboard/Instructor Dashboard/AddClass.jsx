@@ -51,7 +51,7 @@ const AddClass = () => {
 
     return (
         <div className='text-black w-full p-10'>
-            <h1 className='text-4xl font-Kanit font-medium text-center'>Add your Class</h1>
+            <h1 className='text-4xl font-Oswald font-medium text-center'>Add your Class</h1>
 
             <form onSubmit={handleSubmit(onSubmit)} className='pt-16'>
                 <div className='flex justify-between gap-5'>
@@ -111,7 +111,7 @@ const AddClass = () => {
                     <input type="file" {...register("image", { required: true })} className="opacity-0 absolute  file-input file-input-bordered w-full " />
                     {errors.image && <span className="text-red-500">Image is required</span>}
                 </div>
-                <input className="btn btn-sm mt-4  w-full text-2xl font-Montserrat font-medium" type="submit" value="Add a Class" />
+                <input className="btn btn-sm mt-4  w-full text-2xl font-Poppins font-medium" type="submit" value="Add a Class" />
             </form>
         </div>
     );

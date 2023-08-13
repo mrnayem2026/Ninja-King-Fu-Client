@@ -70,8 +70,8 @@ const MyClasses = () => {
     return (
         <div className=' p-10'>
             <div className='w-52 h-28 bg-[#F5F5F7] flex items-center justify-center rounded-xl gap-3 my-4'>
-                <h1> <span className='text-3xl font-Montserrat font-semibold'>Total <br />Classes </span> </h1>
-                <span className='text-7xl font-Montserrat font-semibold'>{classes?.length}</span>
+                <h1> <span className='text-3xl font-Poppins font-semibold'>Total <br />Classes </span> </h1>
+                <span className='text-7xl font-Poppins font-semibold'>{classes?.length}</span>
             </div>
             <div className='grid grid-cols-3 gap-10'>
                 {
@@ -158,7 +158,7 @@ const MyClasses = () => {
                         <input type="file" {...register("image", { required: true })} className="opacity-0 absolute  file-input file-input-bordered w-full " />
                         {errors.image && <span className="text-red-500">Image is required</span>}
                     </div>
-                    <input className="btn btn-sm mt-4  w-full text-2xl font-Montserrat font-medium" type="submit" value="UpDate Class" />
+                    <input className="btn btn-sm mt-4  w-full text-2xl font-Poppins font-medium" type="submit" value="UpDate Class" />
 
                     <div className="modal-action">
                         {/* if there is a button, it will close the modal */}

@@ -68,8 +68,8 @@ const ManageClasses = () => {
     return (
         <div className=' p-10'>
             <div className='w-52 h-28 bg-[#F5F5F7] flex items-center justify-center rounded-xl gap-3 my-4'>
-                <h1> <span className='text-3xl font-Montserrat font-semibold'>Total <br />Classes </span> </h1>
-                <span className='text-7xl font-Montserrat font-semibold'>{allClasse?.length}</span>
+                <h1> <span className='text-3xl font-Poppins font-semibold'>Total <br />Classes </span> </h1>
+                <span className='text-7xl font-Poppins font-semibold'>{allClasse?.length}</span>
             </div>
             <div className='grid grid-cols-3 gap-10'>
                 {
@@ -115,7 +115,7 @@ const ManageClasses = () => {
                             className="input input-bordered w-full text-white placeholder:py-7"></textarea>
                     </div>
 
-                    <input className="btn btn-sm mt-4  w-full text-2xl font-Montserrat font-medium" type="submit" value="Send Feedback" />
+                    <input className="btn btn-sm mt-4  w-full text-2xl font-Poppins font-medium" type="submit" value="Send Feedback" />
 
                     <div className="modal-action">
                         {/* if there is a button, it will close the modal */}
