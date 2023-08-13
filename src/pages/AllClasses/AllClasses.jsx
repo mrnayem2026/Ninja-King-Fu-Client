@@ -1,12 +1,19 @@
 import React from 'react';
+import useAdmin from '../../customeHocks/useAdmin';
+import useInstructor from '../../customeHocks/useInstructor';
 import useAxiosSecure from '../../customeHocks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import { HashLoader } from 'react-spinners';
-import useAdmin from '../../customeHocks/useAdmin';
-import useInstructor from '../../customeHocks/useInstructor';
+import useAuth from '../../customeHocks/useAuth';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const AllClasses = () => {
+    const navigate = useNavigate();
     const [axiosSecure] = useAxiosSecure();
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
+    const {user}=useAuth();
     const { data: classes = [], refetch, isLoading } = useQuery(['classes'], async () => {
         const res = await axiosSecure.get(`/approved_class`)
         return res.data;
@@ -18,12 +25,49 @@ const AllClasses = () => {
         </div>
     }
 
-    const handleSelectedClass =()=>{
-        console.log("handleSelectedClass");
+    const handleSelectedClass = (item) => { 
+        console.log(item);
+        if (user && user?.email) {
+            const selectedClass = {selectedClassId: item, email: user.email}
+            console.log(selectedClass);
+            fetch('https://ninja-kung-fu-server.vercel.app/selected_classes', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(selectedClass)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        refetch();
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Class added.',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+        }
+        else {
+            Swal.fire({
+                title: 'Please login to select the class',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login now!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/login', { state: { from: location } })
+                }
+            })
+        }
     }
-    
-    const [isAdmin] = useAdmin();
-    const [isInstructor] = useInstructor();
+
+
 
     return (
         <div className='container mx-auto'>
@@ -41,10 +85,10 @@ const AllClasses = () => {
                                 <p><span>Price : </span>{priod?.price}</p>
                                 <div className="card-actions ">
                                     <button className="btn btn-primary w-full"
-                                     disabled={priod?.availableSeats == 0 || (isAdmin || isInstructor)}
-                                    onClick={handleSelectedClass}>Select Class</button>
+                                        disabled={priod?.availableSeats == 0 || (isAdmin || isInstructor)}
+                                        onClick={() => handleSelectedClass(priod)}>Select Class</button>
                                 </div>
-                               
+
                             </div>
                         </div>
                     )
