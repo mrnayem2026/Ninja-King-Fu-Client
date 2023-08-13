@@ -8,11 +8,7 @@ const firebaseConfig = {
     projectId: import.meta.env.VITE_PROJECTID,
     storageBucket: import.meta.env.VITE_STORAGEBUCKET,
     messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
-<<<<<<< HEAD
-    appId: import.meta.env.VITE_APPIDs
-=======
     appId: import.meta.env.VITE_APPID
->>>>>>> 6e43a99 (Banner section upgrade all most done)
 };
 
 // Initialize Firebase

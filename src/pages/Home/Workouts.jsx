@@ -1,7 +1,7 @@
 import martail from '../../assets/img/martial-art-img.png'
 import icon1 from '../../assets/icons/self-defence.png'
-// import icon2 from '../../assets/icons/self-defence-2.png'
-// import icon3 from '../../assets/icons/self-defence-3.png'
+import icon2 from '../../assets/icons/self-defence-2.png'
+import icon3 from '../../assets/icons/self-defence-3.png'
 
 const Workouts = () => {
   return (
