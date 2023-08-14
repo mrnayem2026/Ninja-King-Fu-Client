@@ -38,21 +38,27 @@ const Workouts = () => {
                 <img src={icon1} alt="Icon1" className="m-4" />
               </div>
               <div className="ml-28 py-6">
-                <h1 className="font-Oswald text-4xl  font-medium text-black">Self Defence</h1>
+                <h1 className="font-Oswald text-4xl  font-medium text-black">
+                  Self Defence
+                </h1>
                 <p className="font-Poppinss text-base text-black pt-2">
-                Learning self-defense empowers individuals to protect <br /> themselves and others in potentially dangerous situations.
+                  Learning self-defense empowers individuals to protect <br />{" "}
+                  themselves and others in potentially dangerous situations.
                 </p>
               </div>
             </div>
-           
+
             <div className="relative rhombus w-[654px] h-[149px] bg-[#F0F3F7] flex gap-12 my-4">
               <div className="absolute top-9 left-[-44px]  w-[76px] h-[76px] bg-[#e43d49] ">
                 <img src={icon2} alt="Icon1" className="m-4" />
               </div>
               <div className="ml-28 py-6">
-                <h1 className="font-Oswald text-4xl  font-medium text-red-500">Rapidity</h1>
+                <h1 className="font-Oswald text-4xl  font-medium text-red-500">
+                  Rapidity
+                </h1>
                 <p className="font-Poppinss text-base text-black pt-2">
-                The rapidity of technological advancements is <br /> reshaping industries and societies at an unprecedented pace.
+                  The rapidity of technological advancements is <br /> reshaping
+                  industries and societies at an unprecedented pace.
                 </p>
               </div>
             </div>
@@ -62,9 +68,12 @@ const Workouts = () => {
                 <img src={icon3} alt="Icon1" className="m-3" />
               </div>
               <div className="ml-28 py-6">
-                <h1 className="font-Oswald text-4xl  font-medium text-black">Tactics and Reaction</h1>
+                <h1 className="font-Oswald text-4xl  font-medium text-black">
+                  Tactics and Reaction
+                </h1>
                 <p className="font-Poppinss text-base text-black pt-2">
-                Success in competitive sports often hinges on <br /> the strategic interplay between tactics and reaction times.
+                  Success in competitive sports often hinges on <br /> the
+                  strategic interplay between tactics and reaction times.
                 </p>
               </div>
             </div>
