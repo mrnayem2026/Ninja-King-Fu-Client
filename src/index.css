@@ -20,4 +20,8 @@
 
   .rhombus {
     transform: rotate(360deg) skew(330deg);
-    }
+  }
+  .rhombus2 {
+    transform: rotate(360deg) skew(330deg);
+  }
+
