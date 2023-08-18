@@ -6,7 +6,8 @@ import icon5 from "../../assets/icons/ourServiceBg.png";
 
 const OurServices = () => {
   return (
-    <div className="min-h-screen bg-[#EDF0F7] relative">
+   <div className="">
+     <div className="min-h-screen bg-[#EDF0F7] relative ">
       <img
         src={icon5}
         alt=""
@@ -91,9 +92,10 @@ const OurServices = () => {
       <img
         src={icon5}
         alt=""
-        className="absolute bottom-[-14.75rem] right-[-12rem]"
+        className="absolute bottom-[-14.75rem] right-[1rem]"
       />
     </div>
+   </div>
   );
 };
 

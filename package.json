@@ -25,10 +25,12 @@
     "react-hook-form": "^7.44.3",
     "react-icons": "^4.9.0",
     "react-router-dom": "^6.12.0",
+    "react-scroll-parallax": "^3.4.2",
     "react-spinners": "^0.13.8",
     "react-tooltip": "^5.13.1",
     "sass": "^1.63.3",
-    "sweetalert2": "^11.7.12"
+    "sweetalert2": "^11.7.12",
+    "swiper": "^10.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
