@@ -21,12 +21,12 @@ import cardImg5 from "../../assets/img/programImg5.jpg";
 
 const OurPrograms = () => {
   return (
-    <div className="bg-black  bg-opacity-50 ">
+    <div className=" ">
       <ParallaxBanner
         layers={[{ image: bg, speed: -20 }]}
-        className="aspect-[2/1]  w-full h-full object-cover "
+        className="aspect-[2/1]  w-full h-full object-cover bg-black opacity-40"
       >
-        <div className=" py-20">
+        <div className="py-20 ">
           {/* Top content */}
           <div className="absolute left-[750px]">
             <h1 className="text-white text-6xl font-Oswald">OUR PROGRAMS</h1>
