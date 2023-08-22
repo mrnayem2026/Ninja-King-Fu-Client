@@ -14,7 +14,7 @@ const Home = () => {
             <OurPrograms></OurPrograms>
             <OurServices></OurServices>
             <AboutUs></AboutUs>
-            {/* <PopularInstructors></PopularInstructors> */}
+            <PopularInstructors></PopularInstructors>
         </div>
     );
 };

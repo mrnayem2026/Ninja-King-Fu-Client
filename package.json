@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@egjs/flicking-plugins": "^4.7.1",
+    "@egjs/react-flicking": "^4.11.0",
     "@heroicons/react": "^2.0.18",
     "@tanstack/react-query": "^4.29.12",
     "axios": "^1.4.0",
