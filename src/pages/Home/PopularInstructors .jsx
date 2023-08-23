@@ -6,7 +6,7 @@ import { Perspective } from "@egjs/flicking-plugins";
 import useAxiosSecure from "../../customeHocks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import { HashLoader } from "react-spinners";
-import { BsFacebook,BsTwitter,BsInstagram } from 'react-icons/Bs';
+import { BsFacebook,BsTwitter,BsInstagram} from 'react-icons/bs';
 import banner1 from "../../assets/img/instractorBanner.jpg";
 
 const PopularInstructors = () => {
