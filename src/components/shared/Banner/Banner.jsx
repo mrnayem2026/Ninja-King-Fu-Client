@@ -1,10 +1,21 @@
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 import { Button, Carousel } from 'flowbite-react';
 import banner1 from '../../../assets/img/banner1.jpg'
 import banner2 from '../../../assets/img/banner2.jpg'
 import banner3 from '../../../assets/img/banner3.jpg'
+import { useEffect } from 'react';
+
 
 
 const Banner = () => {
+    useEffect(() => {
+        Aos.init({
+          duration: 1000,
+          easing: 'ease-in-out',
+          once: true,
+        });
+      }, []);
     const containerStyle1 = {
         position: 'relative',
         backgroundImage: `linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url(${banner1})`,
@@ -36,14 +47,14 @@ const Banner = () => {
                 <div style={containerStyle1}>
                     <div className='container mx-auto flex flex-col lg:flex-row lg:gap-4 px-4'>
                         <div className='lg:pt-40  pb-7'>
-                            <h1 className='font-Oswald font-bold text-3xl pt-7 lg:text-6xl lg:pb-5 text-transparent  bg-clip-text bg-gradient-to-l from-red-200 to-red-600'>Discover the Art of Combat <br /> Martial Arts Summer Camp</h1>
-                            <p className='font-Poppins font-thin text-base py-4 text-white'>
+                            <h1 data-aos="fade-up-left" className='font-Oswald font-bold text-3xl pt-7 lg:text-6xl lg:pb-5 text-transparent  bg-clip-text bg-gradient-to-l from-red-200 to-red-600' >Discover the Art of Combat <br /> Martial Arts Summer Camp</h1>
+                            <p  className='font-Poppins font-thin text-base py-4 text-white'>
                                 Under the guidance of experienced instructors, you'll learn the ancient techniques and principles that define martial arts. Unleash your inner strength, hone your skills, and forge lifelong friendships, all within the immersive and empowering environment of our Martial Arts Summer Camp.
                                 <br /> <br />
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, magni odio tempora qui sequi nostrum, illo reiciendis asperiores corporis neque distinctio, veniam at? Quas libero culpa odit eveniet, expedita maiores necessitatibus alias suscipit voluptates aperiam. Et, nobis? Fugit temporibus tenetur, dolore sunt fuga illo nobis soluta, voluptate, suscipit unde quas.</p>
+                                <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, magni odio tempora qui sequi nostrum, illo reiciendis asperiores corporis neque distinctio, veniam at? Quas libero culpa odit eveniet, expedita maiores necessitatibus alias suscipit voluptates aperiam. Et, nobis? Fugit temporibus tenetur, dolore sunt fuga illo nobis soluta, voluptate, suscipit unde quas.</p>
                             </p>
-                            <div className='lg:py-4 '>
-                                <button className='btn border-0 text-white mr-4 bg-gradient-to-l from-red-200 to-red-600'>Start free trial</button>
+                            <div  className='lg:py-4 '>
+                                <button  className='btn border-0 text-white mr-4 bg-gradient-to-l from-red-200 to-red-600'>Start free trial</button>
                                 <button className='btn btn-outline hover:bg-gradient-to-l from-red-200 to-red-600 hover:text-white transition duration-300 '>Learn more</button>
                             </div>
                         </div>

@@ -6,6 +6,7 @@ import Workouts from './Workouts';
 import OurServices from './OurServices';
 import OurPrograms from './OurPrograms';
 import FAQ from './FAQ';
+import Gallary from './Gallary';
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <AboutUs></AboutUs>
             <PopularInstructors></PopularInstructors>
             <FAQ></FAQ>
+            <Gallary></Gallary>
         </div>
     );
 };

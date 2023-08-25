@@ -1,9 +1,22 @@
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import martail from "../../assets/img/martial-art-img.png";
 import icon1 from "../../assets/icons/self-defence.png";
 import icon2 from "../../assets/icons/self-defence-2.png";
 import icon3 from "../../assets/icons/self-defence-3.png";
+import { useEffect } from 'react';
+
 
 const Workouts = () => {
+  
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+    });
+  }, []);
+
   return (
     <div className="bg-[#F8F8F8]">
       <div className="flex flex-col pt-36 md:flex-row gap-28 container mx-auto">
@@ -15,13 +28,13 @@ const Workouts = () => {
         <div>
           {/* Top side start  */}
           <div>
-            <h1 className="font-Oswald text-xl  font-medium text-black">
+            <h1  data-aos="fade-up" data-aos-duration="800" className="font-Oswald text-xl  font-medium text-black">
               WHAT YOU IMPROVE ON MY <br />
               <span className="font-Oswald text-6xl font-medium text-red-600">
                 WORKOUTS?
               </span>
             </h1>
-            <p className="py-6 font-Poppinss text-lg text-[#9c9b9e]">
+            <p  data-aos="fade-right" className="py-6 font-Poppinss text-lg text-[#9c9b9e]">
             Her rigorous workouts encompass a diverse range of exercises, ensuring a well-rounded fitness routine.
               <br />
               Joining the group classes has injected a new level of energy and motivation into my workouts.
