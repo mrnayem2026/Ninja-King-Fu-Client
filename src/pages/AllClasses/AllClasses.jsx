@@ -71,7 +71,10 @@ const AllClasses = () => {
 
     return (
         <div className='container mx-auto'>
-            <h1 className='text-center font-Poppins text-6xl py-10  font-semibold text-[#36D399]'>All Classes</h1>
+            <div className="text-center py-10">
+            <h1 className="text-white text-6xl font-Oswald uppercase font-semibold">All Classes</h1>
+            <div className="w-12 h-1 bg-red-500 mx-auto mt-2"></div>
+          </div>
 
             <div className='grid grid-cols-3 gap-10'>
                 {
@@ -79,12 +82,12 @@ const AllClasses = () => {
                         <div key={priod._id} className={`card  bg-base-100 shadow-xl   ${priod?.availableSeats == 0 ? 'bg-red-600' : ''}`}>
                             <figure><img src={priod?.image} alt="Shoes" /></figure>
                             <div className="card-body">
-                                <h2 className="card-title"><span>Class Name : </span>{priod?.className}</h2>
-                                <p><span>Instructor name : </span>{priod?.name}</p>
-                                <p><span>Available seats : </span>{priod?.availableSeats}</p>
-                                <p><span>Price : </span>{priod?.price}</p>
+                                <h2 className="card-title"><span className='font-Oswald font-medium text-3xl text-white'>Class Name : </span> <span className='font-Poppins font-extralight text-white text-xl'>{priod?.className}</span> </h2>
+                                <p><span className='font-Oswald font-medium text-3xl text-white'>Instructor name : </span> <span className='font-Poppins font-extralight text-white text-xl'>{priod?.name}</span> </p>
+                                <p><span className='font-Oswald font-medium text-3xl text-white'>Available seats : </span> <span className='font-Poppins font-extralight text-white text-xl'>{priod?.availableSeats}</span> </p>
+                                <p><span className='font-Oswald font-medium text-3xl text-white'>Price : </span><span className='font-Poppins font-extralight text-white text-xl'>${priod?.price}</span></p>
                                 <div className="card-actions ">
-                                    <button className="btn btn-primary w-full"
+                                    <button className="btn btn-outline hover:bg-[#e43d49] text-white text-3xl font-Oswald px-10 border-[#e43d49] hover:border-[#e43d49] hover:text-base-200 transition duration-500 w-full"
                                         disabled={priod?.availableSeats == 0 || (isAdmin || isInstructor)}
                                         onClick={() => handleSelectedClass(priod)}>Select Class</button>
                                 </div>
