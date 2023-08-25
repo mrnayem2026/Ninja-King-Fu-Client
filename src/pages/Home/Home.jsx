@@ -7,6 +7,7 @@ import OurServices from './OurServices';
 import OurPrograms from './OurPrograms';
 import FAQ from './FAQ';
 import Gallary from './Gallary';
+import CallUs from './CallUs';
 
 const Home = () => {
     return (
@@ -19,6 +20,7 @@ const Home = () => {
             <PopularInstructors></PopularInstructors>
             <FAQ></FAQ>
             <Gallary></Gallary>
+            <CallUs></CallUs>
         </div>
     );
 };
