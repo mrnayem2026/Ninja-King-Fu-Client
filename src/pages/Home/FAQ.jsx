@@ -21,7 +21,10 @@ const FAQ = () => {
           onClose={() => setOpen(false)}
         />
         <img src={youtTube} alt="Youtube" />
-        <BsFillPlayCircleFill className="w-10  h-10 absolute top-[400px] left-[450px] text-[#e43d49]"></BsFillPlayCircleFill>
+        <div className="">
+          <BsFillPlayCircleFill className=" w-10  h-10 absolute top-[400px] left-[450px] text-[#e43d49] animate-ping  inline-flex  rounded-full bg-white opacity-75"></BsFillPlayCircleFill>
+          <span class=""></span>
+        </div>
       </div>
 
       {/* Collaps start */}
@@ -39,7 +42,7 @@ const FAQ = () => {
         {/* Collaps Number 1 start  */}
         <div
           tabIndex={0}
-            className="collapse collapse-plus text-white rounded-none mb-3 bg-[#222739] transition  delay-150 hover:bg-[#E43D4E] hover:transition-all ease-in"
+          className="collapse collapse-plus text-white rounded-none mb-3 bg-[#222739] transition  delay-150 hover:bg-[#E43D4E] hover:transition-all ease-in"
         >
           <div className="collapse-title text-xl font-medium font-Oswald">
             Do I have to be in shape to get started?
@@ -58,7 +61,7 @@ const FAQ = () => {
         {/* Collaps Number 2 start  */}
         <div
           tabIndex={0}
-            className="collapse collapse-plus text-white rounded-none mb-3 bg-[#222739] transition  delay-150 hover:bg-[#E43D4E] hover:transition-all ease-in"
+          className="collapse collapse-plus text-white rounded-none mb-3 bg-[#222739] transition  delay-150 hover:bg-[#E43D4E] hover:transition-all ease-in"
         >
           <div className="collapse-title text-xl font-medium">
             Can I come and watch a class?
@@ -77,7 +80,7 @@ const FAQ = () => {
         {/* Collaps Number 3 start  */}
         <div
           tabIndex={0}
-            className="collapse collapse-plus text-white rounded-none mb-3 bg-[#222739] transition  delay-150 hover:bg-[#E43D4E] hover:transition-all ease-in"
+          className="collapse collapse-plus text-white rounded-none mb-3 bg-[#222739] transition  delay-150 hover:bg-[#E43D4E] hover:transition-all ease-in"
         >
           <div className="collapse-title text-xl font-medium">
             Am I too old to start martial arts training?
@@ -96,7 +99,7 @@ const FAQ = () => {
         {/* Collaps Number 4 start  */}
         <div
           tabIndex={0}
-            className="collapse collapse-plus text-white rounded-none mb-3 bg-[#222739] transition  delay-150 hover:bg-[#E43D4E] hover:transition-all ease-in"
+          className="collapse collapse-plus text-white rounded-none mb-3 bg-[#222739] transition  delay-150 hover:bg-[#E43D4E] hover:transition-all ease-in"
         >
           <div className="collapse-title text-xl font-medium">
             Will I get hurt during the training?

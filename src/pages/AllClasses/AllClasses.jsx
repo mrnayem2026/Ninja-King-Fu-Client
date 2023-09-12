@@ -30,7 +30,7 @@ const AllClasses = () => {
         if (user && user?.email) {
             const selectedClass = {selectedClassId: item, email: user.email}
             console.log(selectedClass);
-            fetch('http://localhost:3000/selected_classes', {
+            fetch('https://ninja-kung-fu-server-for-deploy.vercel.app/selected_classes', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

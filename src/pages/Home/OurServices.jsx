@@ -29,7 +29,8 @@ const OurServices = () => {
         <div className="flex justify-center items-center">
           {/* 1st card  */}
 
-          <div className="rhombus2   w-64 h-32">
+         <div data-aos="fade-right">
+         <div className="rhombus2   w-64 h-32">
             <div className="p-5 my-16 mx-6 bg-white text-center">
               <img
                 src={icon1}
@@ -44,10 +45,12 @@ const OurServices = () => {
                 eros.
               </p>
             </div>
-          </div>
+          </div>  
+         </div>
 
           {/* 1st card  */}
-          <div className="rhombus2   w-64 h-32">
+        <div data-aos="fade-up-right">
+        <div className="rhombus2   w-64 h-32">
             <div className="p-5 my-16 mx-6 bg-white text-center">
               <img src={icon2}  className="mx-auto transition-transform duration-300 transform translate-y-0 hover:-translate-y-14 hover:bg-red-500 hover:p-7" alt="" />
               <h1 className="font-Oswald text-2xl font-medium py-2">
@@ -59,8 +62,11 @@ const OurServices = () => {
               </p>
             </div>
           </div>
-          {/* 1st card  */}
-          <div className="rhombus2   w-64 h-32">
+        </div>
+
+          {/* 2nd card  */}
+         <div  data-aos="fade-up">
+         <div className="rhombus2   w-64 h-32">
             <div className="p-5 my-16 mx-6 bg-white text-center">
               <img src={icon3}  className="mx-auto transition-transform duration-300 transform translate-y-0 hover:-translate-y-14 hover:bg-red-500 hover:p-7" alt="" />
               <h1 className="font-Oswald text-2xl font-medium py-2">
@@ -72,8 +78,11 @@ const OurServices = () => {
               </p>
             </div>
           </div>
-          {/* 1st card  */}
-          <div className="rhombus2   w-64 h-32">
+         </div>
+
+          {/* 3rd card  */}
+        <div  data-aos="fade-down">
+        <div className="rhombus2   w-64 h-32">
             <div className="p-5 my-16 mx-6 bg-white text-center">
               <img src={icon4}  className="mx-auto transition-transform duration-300 transform translate-y-0 hover:-translate-y-14 hover:bg-red-500 hover:p-7" alt="" />
               <h1 className="font-Oswald text-2xl font-medium py-2">
@@ -85,6 +94,7 @@ const OurServices = () => {
               </p>
             </div>
           </div>
+        </div>
         </div>
         {/* Bottom End */}
       </div>

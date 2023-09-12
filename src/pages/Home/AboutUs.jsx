@@ -26,7 +26,7 @@ const AboutUs = () => {
                     onHoverStart={e => {}}
                     onHoverEnd={e => {}}
                 />
-                <div className='pt-32'>
+                <div data-aos="fade-up-left" className='pt-32'>
                     <h1 className='text-4xl lg:text-7xl font-Oswald font-semibold text-white'>ABOUT <span className='text-[#e43d49]'>FIGHT</span> SCHOOL</h1>
                     <p className='font-Oswald font-extralight text-2xl'>Explore Ninja Kung Fu with us</p>
                     <div>

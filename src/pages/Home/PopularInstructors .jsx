@@ -65,7 +65,7 @@ const PopularInstructors = () => {
             {instructors.slice(0, 6).map((instructor) => (
               <div
                 key={instructor._id}
-                className={`card  bg-base-100 shadow-2xl shadow-blue-500/20`}
+                className={`rounded-xl bg-base-100 shadow-2xl shadow-blue-500/20`}
               >
                 <figure>
                   <img

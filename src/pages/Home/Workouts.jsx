@@ -1,19 +1,16 @@
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+import Aos from "aos";
+import "aos/dist/aos.css";
 import martail from "../../assets/img/martial-art-img.png";
 import icon1 from "../../assets/icons/self-defence.png";
 import icon2 from "../../assets/icons/self-defence-2.png";
 import icon3 from "../../assets/icons/self-defence-3.png";
-import { useEffect } from 'react';
-
+import { useEffect } from "react";
 
 const Workouts = () => {
-  
   useEffect(() => {
     Aos.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
+      duration: 500,
+      easing: "ease-in",
     });
   }, []);
 
@@ -28,25 +25,37 @@ const Workouts = () => {
         <div>
           {/* Top side start  */}
           <div>
-            <h1  data-aos="fade-up" data-aos-duration="800" className="font-Oswald text-xl  font-medium text-black">
+            <h1
+              data-aos="fade-up"
+              data-aos-duration="800"
+              className="font-Oswald text-xl  font-medium text-black"
+            >
               WHAT YOU IMPROVE ON MY <br />
               <span className="font-Oswald text-6xl font-medium text-red-600">
                 WORKOUTS?
               </span>
             </h1>
-            <p  data-aos="fade-right" className="py-6 font-Poppinss text-lg text-[#9c9b9e]">
-            Her rigorous workouts encompass a diverse range of exercises, ensuring a well-rounded fitness routine.
+            <p
+              data-aos="fade-right"
+              className="py-6 font-Poppinss text-lg text-[#9c9b9e]"
+            >
+              Her rigorous workouts encompass a diverse range of exercises,
+              ensuring a well-rounded fitness routine.
               <br />
-              Joining the group classes has injected a new level of energy and motivation into my workouts.
+              Joining the group classes has injected a new level of energy and
+              motivation into my workouts.
               <br />
-              Tracking progress and adjusting intensity are key components of effective workouts.
+              Tracking progress and adjusting intensity are key components of
+              effective workouts.
             </p>
           </div>
           {/* Top side End  */}
 
           {/* Bottom side start  */}
           <div>
-            <div className="relative rhombus w-[654px] h-[149px] bg-[#F0F3F7] flex gap-12">
+            {/* Rhombos card 1 */}
+           <div data-aos="fade-right">
+           <div  className="relative rhombus w-[654px] h-[149px] bg-[#F0F3F7] flex gap-12">
               <div className="absolute top-9 left-[-44px]  w-[76px] h-[76px] bg-black ">
                 <img src={icon1} alt="Icon1" className="m-4" />
               </div>
@@ -60,7 +69,11 @@ const Workouts = () => {
                 </p>
               </div>
             </div>
+           </div>
 
+            {/* Rhombos card 2 */}
+
+            <div  data-aos="fade-left">
             <div className="relative rhombus w-[654px] h-[149px] bg-[#F0F3F7] flex gap-12 my-4">
               <div className="absolute top-9 left-[-44px]  w-[76px] h-[76px] bg-[#e43d49] ">
                 <img src={icon2} alt="Icon1" className="m-4" />
@@ -75,8 +88,11 @@ const Workouts = () => {
                 </p>
               </div>
             </div>
+            </div>
 
-            <div className="relative rhombus w-[654px] h-[149px] bg-[#F0F3F7] flex gap-12">
+            {/* Rhombos card 3 */}
+         <div data-aos="fade-up-right">
+         <div  className="relative rhombus w-[654px] h-[149px] bg-[#F0F3F7] flex gap-12">
               <div className="absolute top-9 left-[-44px]  w-[76px] h-[76px] bg-black ">
                 <img src={icon3} alt="Icon1" className="m-3" />
               </div>
@@ -90,6 +106,7 @@ const Workouts = () => {
                 </p>
               </div>
             </div>
+         </div>
           </div>
           {/* Bottom side End  */}
         </div>
